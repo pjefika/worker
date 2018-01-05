@@ -7,6 +7,8 @@ package model;
 
 import dao.QueueDAO;
 import dao.factory.FactoryDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import util.thread.EfikaThread;
 
 public class TasksConsumerServiceImpl implements TasksConsumerService {
@@ -18,7 +20,13 @@ public class TasksConsumerServiceImpl implements TasksConsumerService {
         try {
             dao.consumePendingTasks().getTasks().forEach((t) -> {
                 System.out.println(t.getTask().getDesc());
-                new EfikaThread(new TasksConsumerThread(t));
+                EfikaThread et = new EfikaThread(new TasksConsumerThread(t));
+                try {
+                    et.join();
+                    et.possuiException();
+                } catch (Exception ex) {
+                    Logger.getLogger(TasksConsumerServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
             });
         } catch (Exception e) {
             e.printStackTrace();

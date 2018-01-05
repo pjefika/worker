@@ -5,6 +5,9 @@
  */
 package model;
 
+import br.net.gvt.efika.asserts.AssertsEnum;
+import br.net.gvt.efika.customer.CustomerAssert;
+import br.net.gvt.efika.customer.EfikaCustomer;
 import dao.QueueDAO;
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
@@ -38,7 +41,6 @@ public class TasksConsumerThread implements Runnable {
             List<Item> itens = new ArrayList<>();
             itens.add(new Item("resultado", FactoryService.createTaskLaborerService().taskResult(task)));
             System.out.println("run");
-            task.setOutput(itens);
             dao.completeTask(task);
         } catch (Exception ex) {
             Logger.getLogger(TasksConsumerThread.class.getName()).log(Level.SEVERE, null, ex);
