@@ -5,14 +5,10 @@
  */
 package util;
 
-import de.undercouch.bson4jackson.BsonFactory;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 
 /**
  *
@@ -28,10 +24,9 @@ public class JacksonMapper<T> {
     }
 
     public T deserialize(String string) throws Exception {
-        ByteArrayInputStream stream = new ByteArrayInputStream(string.getBytes(StandardCharsets.UTF_8.name()));
-        ObjectMapper objectMapper = new ObjectMapper(new BsonFactory());
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            return objectMapper.readValue(stream, typeParameterClass);
+            return objectMapper.readValue(string, typeParameterClass);
         } catch (IOException ex) {
             Logger.getLogger(JacksonMapper.class.getName()).log(Level.SEVERE, null, ex);
             throw new Exception();

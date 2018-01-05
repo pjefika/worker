@@ -7,8 +7,11 @@ package model;
 
 import dao.QueueDAO;
 import dao.factory.FactoryDAO;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.domain.queue.Item;
 import model.domain.queue.QueueTaskDTO;
 
 /**
@@ -28,8 +31,10 @@ public class TasksConsumerThread implements Runnable {
     @Override
     public void run() {
         try {
+            List<Item> itens = new ArrayList<>();
+            itens.add(new Item("resultado", Boolean.FALSE));
             System.out.println("run");
-            task.setOutput("Ronaldo");
+            task.setOutput(itens);
             dao.completeTask(task);
         } catch (Exception ex) {
             Logger.getLogger(TasksConsumerThread.class.getName()).log(Level.SEVERE, null, ex);

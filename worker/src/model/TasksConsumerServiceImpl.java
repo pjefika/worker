@@ -18,7 +18,7 @@ public class TasksConsumerServiceImpl implements TasksConsumerService {
         try {
             dao.consumePendingTasks().getTasks().forEach((t) -> {
                 System.out.println(t.getTask().getDesc());
-                new EfikaThread(new TasksConsumerThread(t)).run();
+                new EfikaThread(new TasksConsumerThread(t));
             });
         } catch (Exception e) {
             e.printStackTrace();
