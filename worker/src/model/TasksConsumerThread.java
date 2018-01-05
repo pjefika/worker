@@ -10,12 +10,15 @@ import br.net.gvt.efika.customer.CustomerAssert;
 import br.net.gvt.efika.customer.EfikaCustomer;
 import dao.QueueDAO;
 import dao.factory.FactoryDAO;
+import dao.http.ContentType;
+import dao.http.Urls;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.domain.queue.Item;
 import model.domain.queue.QueueTaskDTO;
+import model.factory.FactoryService;
 
 /**
  *
@@ -31,11 +34,12 @@ public class TasksConsumerThread implements Runnable {
         this.task = task;
     }
 
+    
     @Override
     public void run() {
         try {
-           
-            
+            List<Item> itens = new ArrayList<>();
+            itens.add(new Item("resultado", FactoryService.createTaskLaborerService().taskResult(task)));
             System.out.println("run");
             dao.completeTask(task);
         } catch (Exception ex) {
