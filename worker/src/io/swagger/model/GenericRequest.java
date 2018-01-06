@@ -2,7 +2,6 @@ package io.swagger.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.sun.istack.internal.NotNull;
 import java.util.Objects;
 import java.util.Date;
 
@@ -34,9 +33,6 @@ public class GenericRequest {
 
     private SystemEnum system = null;
 
-    /**
-     * Tipo do parâmetro enviado
-     */
     public enum ParamTypeEnum {
         INSTANCIA("INSTANCIA"),
         WORKORDER_ID("WORKORDER_ID");
@@ -56,12 +52,6 @@ public class GenericRequest {
     private ParamTypeEnum paramType = null;
     private Date requestDate = null;
 
-    /**
-     * Parâmetro referente ao cliente
-   *
-     */
-    @JsonProperty("parameter")
-    @NotNull
     public String getParameter() {
         return parameter;
     }
@@ -70,11 +60,6 @@ public class GenericRequest {
         this.parameter = parameter;
     }
 
-    /**
-     *
-     */
-    @JsonProperty("executor")
-    @NotNull
     public String getExecutor() {
         return executor;
     }
@@ -83,10 +68,6 @@ public class GenericRequest {
         this.executor = executor;
     }
 
-    /**
-     * Sistema que originou a requisição
-   *
-     */
     @JsonProperty("system")
     public SystemEnum getSystem() {
         return system;
@@ -96,10 +77,6 @@ public class GenericRequest {
         this.system = system;
     }
 
-    /**
-     * Tipo do parâmetro enviado
-   *
-     */
     @JsonProperty("paramType")
     public ParamTypeEnum getParamType() {
         return paramType;
@@ -111,7 +88,7 @@ public class GenericRequest {
 
     /**
      * Data da solicitação
-   *
+     *
      */
     @JsonProperty("requestDate")
     public Date getRequestDate() {

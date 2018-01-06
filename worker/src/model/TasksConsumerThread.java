@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.domain.queue.Item;
 import model.domain.queue.QueueTaskDTO;
+import model.factory.FactoryService;
 
 /**
  *
@@ -32,9 +33,10 @@ public class TasksConsumerThread implements Runnable {
     @Override
     public void run() {
         try {
-            List<Item> itens = new ArrayList<>();
-//            itens.add(new Item("resultado", FactoryService.createTaskLaborerService().taskResult(task)));
             System.out.println("run");
+            List<Item> itens = new ArrayList<>();
+            itens.add(new Item("resultado", FactoryService.createTaskLaborerService().taskResult(task)));
+            task.setOutput(itens);
             dao.completeTask(task);
         } catch (Exception ex) {
             Logger.getLogger(TasksConsumerThread.class.getName()).log(Level.SEVERE, null, ex);
