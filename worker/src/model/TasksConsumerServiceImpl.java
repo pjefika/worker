@@ -21,12 +21,12 @@ public class TasksConsumerServiceImpl implements TasksConsumerService {
             dao.consumePendingTasks().getTasks().forEach((t) -> {
                 System.out.println(t.getTask().getDesc());
                 EfikaThread et = new EfikaThread(new TasksConsumerThread(t));
-                try {
-                    et.join();
-                    et.possuiException();
-                } catch (Exception ex) {
-                    Logger.getLogger(TasksConsumerServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-                }
+//                try {
+//                    et.join();
+//                    et.possuiException();
+//                } catch (Exception ex) {
+//                    Logger.getLogger(TasksConsumerServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+//                }
             });
         } catch (Exception e) {
             e.printStackTrace();
