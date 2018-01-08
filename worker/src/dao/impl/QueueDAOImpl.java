@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package dao.impl;
 
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.HttpDAO;
 import dao.http.Urls;
 import dao.request.RequestFactory;
-import model.domain.queue.PendingTasksResponseDTO;
-import model.domain.queue.QueueTaskDTO;
+import model.domain.queue.dto.PendingTasksResponseDTO;
+import model.domain.queue.dto.QueueTaskDTO;
 import util.JacksonMapper;
 
 public class QueueDAOImpl implements QueueDAO {

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package dao.impl;
 
 import java.util.List;
-import model.domain.queue.QueueTaskDTO;
+import model.domain.queue.dto.QueueTaskDTO;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

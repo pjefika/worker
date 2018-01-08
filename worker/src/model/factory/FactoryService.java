@@ -7,8 +7,6 @@ package model.factory;
 
 import model.TasksConsumerService;
 import model.TasksConsumerServiceImpl;
-import model.TaskLaborerService;
-import model.TaskLaborerServiceImpl;
 
 /**
  *
@@ -19,9 +17,9 @@ public class FactoryService {
     public static TasksConsumerService createTasksConsumerService() {
         return new TasksConsumerServiceImpl();
     }
-    
-    public static TaskLaborerService createTaskLaborerService(){
-        return new TaskLaborerServiceImpl();
-    }
+//    
+//    public static TaskLaborerService createTaskLaborerService(){
+//        return new TaskLaborerFulltestServiceImpl();
+//    }
 
 }

@@ -5,7 +5,7 @@
  */
 package model;
 
-import dao.QueueDAO;
+import dao.impl.QueueDAO;
 import dao.factory.FactoryDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;

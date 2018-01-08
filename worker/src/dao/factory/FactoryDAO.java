@@ -5,8 +5,8 @@
  */
 package dao.factory;
 
-import dao.QueueDAO;
-import dao.QueueDAOImpl;
+import dao.impl.QueueDAO;
+import dao.impl.QueueDAOImpl;
 import dao.http.HttpDAO;
 import dao.http.HttpDAOImpl;
 

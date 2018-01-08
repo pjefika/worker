@@ -5,7 +5,8 @@
  */
 package model;
 
-import model.domain.queue.QueueTaskDTO;
+import model.domain.queue.dto.QueueTaskDTO;
+
 
 /**
  *
@@ -13,6 +14,6 @@ import model.domain.queue.QueueTaskDTO;
  */
 public interface TaskLaborerService {
 
-    public Object taskResult(QueueTaskDTO task) throws Exception;
+    public QueueTaskDTO executar() throws Exception;
 
 }

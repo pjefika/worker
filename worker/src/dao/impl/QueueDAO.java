@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package dao.impl;
 
-import model.domain.queue.PendingTasksResponseDTO;
-import model.domain.queue.QueueTaskDTO;
+import model.domain.queue.dto.PendingTasksResponseDTO;
+import model.domain.queue.dto.QueueTaskDTO;
+
 
 /**
  *

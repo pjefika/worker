@@ -5,15 +5,13 @@
  */
 package model;
 
-import dao.QueueDAO;
 import dao.factory.FactoryDAO;
-import java.util.ArrayList;
-import java.util.List;
+import dao.impl.QueueDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.domain.queue.Item;
-import model.domain.queue.QueueTaskDTO;
-import model.factory.FactoryService;
+import model.domain.queue.dto.QueueTaskDTO;
+import model.factory.LaborerServiceFactory;
+
 
 /**
  *
@@ -33,11 +31,7 @@ public class TasksConsumerThread implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println("run");
-            List<Item> itens = new ArrayList<>();
-            itens.add(new Item("resultado", FactoryService.createTaskLaborerService().taskResult(task)));
-            task.setOutput(itens);
-            dao.completeTask(task);
+            LaborerServiceFactory.create(task).executar();
         } catch (Exception ex) {
             Logger.getLogger(TasksConsumerThread.class.getName()).log(Level.SEVERE, null, ex);
         }
