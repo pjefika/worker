@@ -10,6 +10,7 @@ import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.Urls;
 import io.swagger.model.GenericRequest;
+import java.nio.charset.Charset;
 import model.domain.queue.dto.CustomerRequest;
 import model.domain.queue.dto.FulltestResponse;
 import model.domain.queue.dto.QueueTaskDTO;
@@ -31,7 +32,7 @@ public class TaskLaborerFulltestServiceImpl extends TaskLaborerAbstract {
         JacksonMapper<FullTest> mapper = new JacksonMapper(FullTest.class);
         ret.setFulltest(mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.FULLTESTPORINSTANCIA.getUrl(),
                 req,
-                ContentType.JSON.getCont())));
+                ContentType.JSON.getCont(), Charset.forName("UTF-8"))));
         this.task.setOutput(ret);
         System.out.println("RETORNOCUSTOMERAPI -> "+ new JacksonMapper(FullTest.class).serialize(ret));
     }
