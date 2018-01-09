@@ -28,11 +28,11 @@ public class TaskLaborerFulltestServiceImpl extends TaskLaborerAbstract {
         GenericRequest req = new GenericRequest(input.getInstancia(), task.getExecutor());
         System.out.println("REQPARACUSTOMERAPI -> " + new JacksonMapper(GenericRequest.class).serialize(req));
         FulltestResponse ret = new FulltestResponse();
-        ret.setType("fulltest");
-        ret.setFulltest(new JacksonMapper<>(FullTest.class).deserialize(FactoryDAO.createHttpDAO().post(Urls.FULLTESTPORINSTANCIA.getUrl(),
+        JacksonMapper<FullTest> mapper = new JacksonMapper(FullTest.class);
+        ret.setFulltest(mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.FULLTESTPORINSTANCIA.getUrl(),
                 req,
                 ContentType.JSON.getCont())));
-        task.setOutput(ret);
+        this.task.setOutput(ret);
         System.out.println("RETORNOCUSTOMERAPI -> "+ new JacksonMapper(FullTest.class).serialize(ret));
     }
 
