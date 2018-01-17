@@ -18,7 +18,7 @@ public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
     }
 
     @Override
-    public void processar() throws Exception {
+    public void processar() {
         CertiticationInput input = (CertiticationInput) task.getInput();
         CertificationResponse resp = new CertificationResponse();
         try {

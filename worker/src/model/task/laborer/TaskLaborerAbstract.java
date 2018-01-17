@@ -28,7 +28,7 @@ public abstract class TaskLaborerAbstract implements TaskLaborerService {
         }
     }
 
-    public abstract void processar() throws Exception;
+    public abstract void processar();
 
     @Override
     public QueueTaskDTO executar() throws Exception {

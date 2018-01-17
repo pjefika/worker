@@ -9,7 +9,6 @@ import dao.factory.FactoryDAO;
 import dao.impl.auth.EfikaAuthDAO;
 import model.dto.input.AuthInput;
 import model.dto.output.AuthResponse;
-import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
 
@@ -22,9 +21,8 @@ public class TaskLaborerAuthServiceImpl extends TaskLaborerAbstract {
     }
 
     @Override
-    public void processar() throws Exception {
+    public void processar(){
         AuthResponse resp = new AuthResponse();
-
         try {
             resp.setMatch(FactoryDAO.newEfikaAuthDAO().verificarCredenciais((AuthInput) task.getInput()));
             resp.setState(TaskResultState.OK);

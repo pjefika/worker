@@ -13,8 +13,9 @@ public enum Urls {
 
     CADASTRO_STEALER("http://10.40.195.81:8080/stealerAPI/oss/"),
     CERTIFICATION("http://10.40.195.81:8080/customerAPI/certification/execByParam"),
-    QUEUE("http://10.40.195.81:8080/queueAPI/queue/"),
-    AUTH("http://10.40.198.168:8080/efikaAuth/credencial/verificar");
+    QUEUE_COMPLETE_TASK("http://localhost:8080/queueAPI/queue/completeTask"),
+    QUEUE("http://localhost:8080/queueAPI/queue/"),
+    AUTH("http://localhost:8080/efikaAuth/credencial/verificar");
 
     private final String valor;
 
