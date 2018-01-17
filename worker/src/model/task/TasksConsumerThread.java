@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.task;
 
 import dao.factory.FactoryDAO;
-import dao.impl.QueueDAO;
+import dao.impl.queue.QueueDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.domain.queue.dto.QueueTaskDTO;
-import model.factory.LaborerServiceFactory;
+import model.task.factory.LaborerServiceFactory;
 
 
 /**

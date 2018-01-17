@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.impl;
+package dao.impl.queue;
 
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.HttpDAO;
 import dao.http.Urls;
 import dao.request.RequestFactory;
-import java.nio.charset.Charset;
 import model.domain.queue.dto.PendingTasksResponseDTO;
 import model.domain.queue.dto.QueueTaskDTO;
 import util.JacksonMapper;

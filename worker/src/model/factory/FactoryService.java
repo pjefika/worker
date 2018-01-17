@@ -5,8 +5,8 @@
  */
 package model.factory;
 
-import model.TasksConsumerService;
-import model.TasksConsumerServiceImpl;
+import model.task.TasksConsumerService;
+import model.task.TasksConsumerServiceImpl;
 
 /**
  *

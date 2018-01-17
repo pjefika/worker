@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.factory;
+package model.task.factory;
 
-import model.TaskLaborerFulltestServiceImpl;
-import model.TaskLaborerService;
+import model.task.TaskLaboreCertificationServiceImpl;
+import model.task.TaskLaborerService;
 import model.domain.queue.dto.QueueTaskDTO;
 import model.domain.queue.enuns.TasksEnum;
 
@@ -19,8 +19,9 @@ public class LaborerServiceFactory {
     public static TaskLaborerService create(QueueTaskDTO task) throws Exception {
         
          if (task.getTask() == TasksEnum.FULLTEST) {
-             return new TaskLaborerFulltestServiceImpl(task);
+             return new TaskLaboreCertificationServiceImpl(task);
          }
+         
          throw new Exception("Tarefa não implementada.");
     }
 

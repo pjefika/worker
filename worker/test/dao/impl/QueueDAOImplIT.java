@@ -5,6 +5,7 @@
  */
 package dao.impl;
 
+import dao.impl.queue.QueueDAOImpl;
 import java.util.List;
 import model.domain.queue.dto.QueueTaskDTO;
 import org.junit.After;

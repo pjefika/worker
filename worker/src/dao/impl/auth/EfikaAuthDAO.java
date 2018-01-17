@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package dao.impl.auth;
+
+import dao.request.VerificarCredencialRequest;
 
 /**
  *
  * @author G0042204
  */
-public interface TasksConsumerService {
-    public void consume();
+public interface EfikaAuthDAO {
+
+    public Boolean verificarCredenciais(VerificarCredencialRequest cred) throws Exception;
+
 }
