@@ -7,6 +7,7 @@ package dao.stealer;
 
 import dao.impl.auth.EfikaAuthDAOmpl;
 import dao.request.VerificarCredencialRequest;
+import model.dto.input.AuthInput;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,7 +42,7 @@ public class EfikaAuthDAOmplIT {
     public void testVerificarCredenciais() throws Exception {
         try {
             System.out.println("verificarCredenciais");
-            VerificarCredencialRequest cred = new VerificarCredencialRequest();
+            AuthInput cred = new AuthInput();
             cred.setLogin("#######");
             cred.setSenha("#######");
             EfikaAuthDAOmpl instance = new EfikaAuthDAOmpl();

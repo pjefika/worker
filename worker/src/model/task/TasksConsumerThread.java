@@ -9,9 +9,8 @@ import dao.factory.FactoryDAO;
 import dao.impl.queue.QueueDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.domain.queue.dto.QueueTaskDTO;
+import model.dto.task.QueueTaskDTO;
 import model.task.factory.LaborerServiceFactory;
-
 
 /**
  *

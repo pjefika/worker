@@ -11,6 +11,8 @@ import dao.http.HttpDAO;
 import dao.http.HttpDAOImpl;
 import dao.impl.auth.EfikaAuthDAO;
 import dao.impl.auth.EfikaAuthDAOmpl;
+import dao.impl.customer.CustomerDAO;
+import dao.impl.customer.CustomerDAOImpl;
 
 /**
  *
@@ -28,6 +30,10 @@ public class FactoryDAO {
 
     public static EfikaAuthDAO newEfikaAuthDAO() {
         return new EfikaAuthDAOmpl();
+    }
+
+    public static CustomerDAO newCustomerDAO() {
+        return new CustomerDAOImpl();
     }
 
 }

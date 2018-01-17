@@ -9,7 +9,7 @@ import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.HttpDAO;
 import dao.http.Urls;
-import dao.request.VerificarCredencialRequest;
+import model.dto.input.AuthInput;
 import util.JacksonMapper;
 
 public class EfikaAuthDAOmpl implements EfikaAuthDAO {
@@ -17,7 +17,7 @@ public class EfikaAuthDAOmpl implements EfikaAuthDAO {
     private static final HttpDAO HTTP_DAO = FactoryDAO.createHttpDAO();
 
     @Override
-    public Boolean verificarCredenciais(VerificarCredencialRequest cred) throws Exception {
+    public Boolean verificarCredenciais(AuthInput cred) throws Exception {
         try {
             JacksonMapper<Boolean> mapper = new JacksonMapper(Boolean.class);
             return mapper.deserialize(HTTP_DAO.post(

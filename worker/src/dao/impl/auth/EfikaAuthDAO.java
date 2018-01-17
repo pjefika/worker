@@ -5,7 +5,7 @@
  */
 package dao.impl.auth;
 
-import dao.request.VerificarCredencialRequest;
+import model.dto.input.AuthInput;
 
 /**
  *
@@ -13,6 +13,6 @@ import dao.request.VerificarCredencialRequest;
  */
 public interface EfikaAuthDAO {
 
-    public Boolean verificarCredenciais(VerificarCredencialRequest cred) throws Exception;
+    public Boolean verificarCredenciais(AuthInput cred) throws Exception;
 
 }

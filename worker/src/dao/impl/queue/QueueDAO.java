@@ -5,8 +5,9 @@
  */
 package dao.impl.queue;
 
-import model.domain.queue.dto.PendingTasksResponseDTO;
-import model.domain.queue.dto.QueueTaskDTO;
+import model.dto.task.PendingTasksResponseDTO;
+import model.dto.task.QueueTaskDTO;
+
 
 
 /**

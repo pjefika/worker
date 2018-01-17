@@ -10,8 +10,8 @@ import dao.http.ContentType;
 import dao.http.HttpDAO;
 import dao.http.Urls;
 import dao.request.RequestFactory;
-import model.domain.queue.dto.PendingTasksResponseDTO;
-import model.domain.queue.dto.QueueTaskDTO;
+import model.dto.task.PendingTasksResponseDTO;
+import model.dto.task.QueueTaskDTO;
 import util.JacksonMapper;
 
 public class QueueDAOImpl implements QueueDAO {

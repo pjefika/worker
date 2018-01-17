@@ -5,10 +5,11 @@
  */
 package model.task.factory;
 
-import model.task.TaskLaboreCertificationServiceImpl;
-import model.task.TaskLaborerService;
-import model.domain.queue.dto.QueueTaskDTO;
-import model.domain.queue.enuns.TasksEnum;
+import model.dto.task.QueueTaskDTO;
+import model.enuns.TasksEnum;
+import model.task.laborer.TaskLaborerCertificationServiceImpl;
+import model.task.laborer.TaskLaborerAuthServiceImpl;
+import model.task.laborer.TaskLaborerService;
 
 /**
  *
@@ -17,12 +18,16 @@ import model.domain.queue.enuns.TasksEnum;
 public class LaborerServiceFactory {
 
     public static TaskLaborerService create(QueueTaskDTO task) throws Exception {
-        
-         if (task.getTask() == TasksEnum.FULLTEST) {
-             return new TaskLaboreCertificationServiceImpl(task);
-         }
-         
-         throw new Exception("Tarefa não implementada.");
+
+        if (task.getTask() == TasksEnum.CERTIFICATION) {
+            return new TaskLaborerCertificationServiceImpl(task);
+        }
+
+        if (task.getTask() == TasksEnum.AUTH) {
+            return new TaskLaborerAuthServiceImpl(task);
+        }
+
+        throw new Exception("Tarefa não implementada.");
     }
 
 }
