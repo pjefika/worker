@@ -5,10 +5,11 @@
  */
 package model.factory;
 
-import model.TaskLaborerFulltestServiceImpl;
+import model.TaskLaborerCadastroServiceImpl;
+import model.TaskLaborerCertificationServiceImpl;
 import model.TaskLaborerService;
-import model.domain.queue.dto.QueueTaskDTO;
-import model.domain.queue.enuns.TasksEnum;
+import model.dto.task.QueueTaskDTO;
+import model.enuns.TasksEnum;
 
 /**
  *
@@ -17,11 +18,14 @@ import model.domain.queue.enuns.TasksEnum;
 public class LaborerServiceFactory {
 
     public static TaskLaborerService create(QueueTaskDTO task) throws Exception {
-        
-         if (task.getTask() == TasksEnum.FULLTEST) {
-             return new TaskLaborerFulltestServiceImpl(task);
-         }
-         throw new Exception("Tarefa não implementada.");
+
+        if (task.getTask() == TasksEnum.CERTIFICATION) {
+            return new TaskLaborerCertificationServiceImpl(task);
+        }
+        if (task.getTask() == TasksEnum.CADASTRO) {
+            return new TaskLaborerCadastroServiceImpl(task);
+        }
+        throw new Exception("Tarefa não implementada.");
     }
 
 }

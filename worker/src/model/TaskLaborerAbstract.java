@@ -6,7 +6,7 @@
 package model;
 
 import dao.factory.FactoryDAO;
-import model.domain.queue.dto.QueueTaskDTO;
+import model.dto.task.QueueTaskDTO;
 
 /**
  *
@@ -28,10 +28,10 @@ public abstract class TaskLaborerAbstract implements TaskLaborerService {
         }
     }
 
-    public abstract void processar() throws Exception;
+    public abstract void processar();
 
     @Override
-    public QueueTaskDTO executar() throws Exception {
+    public QueueTaskDTO executar() {
         this.processar();
         this.finalizar();
         return this.task;

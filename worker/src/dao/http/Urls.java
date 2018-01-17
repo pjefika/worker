@@ -11,8 +11,8 @@ package dao.http;
  */
 public enum Urls {
 
-    CADASTRO_STEALER("http://10.40.195.81:8080/stealerAPI/oss/"),
-    FULLTESTPORINSTANCIA("http://localhost:8080/customerAPI/certification/execByParam"),
+    CUSTOMERAPI_CADASTRO("http://localhost:8080/customerAPI/customer/findByParameter"),
+    CUSTOMERAPI_CERTIFICATION("http://localhost:8080/customerAPI/certification/execByParam"),
     QUEUE("http://localhost:8080/queueAPI/queue/");
 
     private final String valor;

@@ -5,8 +5,7 @@
  */
 package model;
 
-import model.domain.queue.dto.QueueTaskDTO;
-
+import model.dto.task.QueueTaskDTO;
 
 /**
  *

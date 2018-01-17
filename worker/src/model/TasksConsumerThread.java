@@ -5,13 +5,10 @@
  */
 package model;
 
-import dao.factory.FactoryDAO;
-import dao.impl.QueueDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.domain.queue.dto.QueueTaskDTO;
+import model.dto.task.QueueTaskDTO;
 import model.factory.LaborerServiceFactory;
-
 
 /**
  *
@@ -21,13 +18,10 @@ public class TasksConsumerThread implements Runnable {
 
     private QueueTaskDTO task;
 
-    private QueueDAO dao = FactoryDAO.createQueueDAO();
-
     public TasksConsumerThread(QueueTaskDTO task) {
         this.task = task;
     }
 
-    
     @Override
     public void run() {
         try {
