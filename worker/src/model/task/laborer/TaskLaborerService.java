@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.task.laborer;
+
+import model.dto.task.QueueTaskDTO;
 
 /**
  *
- * @author G0042204
+ * @author G0041775
  */
-public interface TasksConsumerService {
-    public void consume();
+public interface TaskLaborerService {
+
+    public QueueTaskDTO executar() throws Exception;
+
 }

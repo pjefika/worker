@@ -11,14 +11,11 @@ import dao.http.ContentType;
 import dao.http.Urls;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
-import model.dto.cert.CustomerCertificationDTO;
 import model.dto.input.CadastroInput;
-import model.dto.input.CertiticationInput;
 import model.dto.output.CadastroResponse;
-import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
-
+import model.task.laborer.TaskLaborerAbstract;
 import util.JacksonMapper;
 
 public class TaskLaborerCadastroServiceImpl extends TaskLaborerAbstract {

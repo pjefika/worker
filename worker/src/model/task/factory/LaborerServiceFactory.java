@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.factory;
+package model.task.factory;
 
-import model.TaskLaborerCadastroServiceImpl;
-import model.TaskLaborerCertificationServiceImpl;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TasksEnum;
+import model.task.laborer.TaskLaborerCertificationServiceImpl;
+import model.task.laborer.TaskLaborerAuthServiceImpl;
 import model.task.laborer.TaskLaborerService;
 
 /**
@@ -22,9 +22,11 @@ public class LaborerServiceFactory {
         if (task.getTask() == TasksEnum.CERTIFICATION) {
             return new TaskLaborerCertificationServiceImpl(task);
         }
-        if (task.getTask() == TasksEnum.CADASTRO) {
-            return new TaskLaborerCadastroServiceImpl(task);
+
+        if (task.getTask() == TasksEnum.AUTH) {
+            return new TaskLaborerAuthServiceImpl(task);
         }
+
         throw new Exception("Tarefa não implementada.");
     }
 

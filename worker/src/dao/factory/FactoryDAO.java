@@ -5,10 +5,14 @@
  */
 package dao.factory;
 
-import dao.impl.QueueDAO;
-import dao.impl.QueueDAOImpl;
+import dao.impl.queue.QueueDAO;
+import dao.impl.queue.QueueDAOImpl;
 import dao.http.HttpDAO;
 import dao.http.HttpDAOImpl;
+import dao.impl.auth.EfikaAuthDAO;
+import dao.impl.auth.EfikaAuthDAOmpl;
+import dao.impl.customer.CustomerDAO;
+import dao.impl.customer.CustomerDAOImpl;
 
 /**
  *
@@ -22,6 +26,14 @@ public class FactoryDAO {
 
     public static QueueDAO createQueueDAO() {
         return new QueueDAOImpl();
+    }
+
+    public static EfikaAuthDAO newEfikaAuthDAO() {
+        return new EfikaAuthDAOmpl();
+    }
+
+    public static CustomerDAO newCustomerDAO() {
+        return new CustomerDAOImpl();
     }
 
 }

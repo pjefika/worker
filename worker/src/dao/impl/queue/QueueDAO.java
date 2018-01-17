@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.impl;
+package dao.impl.queue;
 
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;

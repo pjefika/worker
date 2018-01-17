@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package worker;
 
-import model.task.TasksConsumerServiceImpl;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author G0042204
  */
-public class TasksConsumerServiceImplIT {
+public class WorkerIT {
     
-    public TasksConsumerServiceImplIT() {
+    public WorkerIT() {
     }
     
     @AfterClass
@@ -34,12 +33,13 @@ public class TasksConsumerServiceImplIT {
     }
 
     /**
-     * Test of consume method, of class TasksConsumerServiceImpl.
+     * Test of main method, of class Worker.
      */
     @Test
-    public void testConsume() {
-        TasksConsumerServiceImpl instance = new TasksConsumerServiceImpl();
-        instance.consume();
+    public void testMain() {
+        System.out.println("main");
+        String[] args = null;
+        Worker.main(args);
     }
     
 }

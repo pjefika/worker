@@ -15,6 +15,7 @@ import model.dto.input.CertiticationInput;
 import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
+import model.task.laborer.TaskLaborerAbstract;
 
 import util.JacksonMapper;
 

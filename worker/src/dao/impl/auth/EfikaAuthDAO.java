@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package dao.impl.auth;
 
-import model.dto.task.QueueTaskDTO;
+import model.dto.input.AuthInput;
 
 /**
  *
- * @author G0041775
+ * @author G0042204
  */
-public interface TaskLaborerService {
+public interface EfikaAuthDAO {
 
-    public QueueTaskDTO executar() throws Exception;
+    public Boolean verificarCredenciais(AuthInput cred) throws Exception;
 
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.impl;
+package dao.impl.queue;
 
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
@@ -31,7 +31,7 @@ public class QueueDAOImpl implements QueueDAO {
     public QueueTaskDTO completeTask(QueueTaskDTO task) throws Exception {
         JacksonMapper<QueueTaskDTO> mapper = new JacksonMapper(QueueTaskDTO.class);
         return mapper.deserialize(HTTP_DAO.post(
-                Urls.QUEUE.getValor() + "completeTask",
+                Urls.QUEUE_COMPLETE_TASK.getValor(),
                 task,
                 ContentType.JSON.getValor(), null));
     }

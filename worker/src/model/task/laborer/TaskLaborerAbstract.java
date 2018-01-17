@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.task.laborer;
 
 import dao.factory.FactoryDAO;
 import model.dto.task.QueueTaskDTO;
