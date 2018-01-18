@@ -19,7 +19,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     public CustomerCertificationDTO certify(CertiticationInput input) throws Exception {
 
         JacksonMapper<CustomerCertificationDTO> mapper = new JacksonMapper(CustomerCertificationDTO.class);
-        return mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CERTIFICATION.getUrl(),
+        return mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CERTIFICATION.getUrl(),
                 input,
                 ContentType.JSON.getCont(), Charset.forName("UTF-8")));
     }

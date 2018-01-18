@@ -1,57 +1,42 @@
 package io.swagger.model;
 
+import br.net.gvt.efika.customer.EfikaCustomer;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Objects;
 import java.util.Date;
+import io.swagger.model.enums.ParamTypeEnum;
+import io.swagger.model.enums.SystemEnum;
 
 public class GenericRequest {
 
     private String parameter = null;
     private String executor = null;
+    private EfikaCustomer customer;
 
     public GenericRequest(String parameter, String executor) {
         this.parameter = parameter;
         this.executor = executor;
     }
 
-    public enum SystemEnum {
-        URA("URA"),
-        APP("APP");
-        private String value;
+    public GenericRequest(String parameter, EfikaCustomer customer, String executor) {
+        this.parameter = parameter;
+        this.executor = executor;
+        this.customer = customer;
+    }
 
-        SystemEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return String.valueOf(value);
-        }
+    public GenericRequest() {
     }
 
     private SystemEnum system = null;
 
-    public enum ParamTypeEnum {
-        INSTANCIA("INSTANCIA"),
-        WORKORDER_ID("WORKORDER_ID");
-        private String value;
-
-        ParamTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return String.valueOf(value);
-        }
-    }
-
     private ParamTypeEnum paramType = null;
     private Date requestDate = null;
 
+    /**
+     * Parâmetro referente ao cliente
+     *
+     */
+    @JsonProperty("parameter")
     public String getParameter() {
         return parameter;
     }
@@ -60,6 +45,10 @@ public class GenericRequest {
         this.parameter = parameter;
     }
 
+    /**
+     *
+     */
+    @JsonProperty("executor")
     public String getExecutor() {
         return executor;
     }
@@ -68,6 +57,10 @@ public class GenericRequest {
         this.executor = executor;
     }
 
+    /**
+     * Sistema que originou a requisição
+     *
+     */
     @JsonProperty("system")
     public SystemEnum getSystem() {
         return system;
@@ -77,6 +70,10 @@ public class GenericRequest {
         this.system = system;
     }
 
+    /**
+     * Tipo do parâmetro enviado
+     *
+     */
     @JsonProperty("paramType")
     public ParamTypeEnum getParamType() {
         return paramType;
@@ -144,4 +141,13 @@ public class GenericRequest {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
+    public EfikaCustomer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(EfikaCustomer customer) {
+        this.customer = customer;
+    }
+
 }

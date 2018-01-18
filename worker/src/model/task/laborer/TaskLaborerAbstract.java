@@ -31,7 +31,7 @@ public abstract class TaskLaborerAbstract implements TaskLaborerService {
     public abstract void processar();
 
     @Override
-    public QueueTaskDTO executar() throws Exception {
+    public QueueTaskDTO executar() {
         this.processar();
         this.finalizar();
         return this.task;

@@ -8,8 +8,6 @@ package dao.impl.queue;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
 
-
-
 /**
  *
  * @author G0042204

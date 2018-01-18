@@ -7,8 +7,6 @@ package model.task.laborer;
 
 import model.dto.task.QueueTaskDTO;
 
-
-
 /**
  *
  * @author G0041775
