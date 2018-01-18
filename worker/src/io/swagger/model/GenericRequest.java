@@ -9,8 +9,8 @@ import io.swagger.model.enums.SystemEnum;
 
 public class GenericRequest {
 
-    private String parameter = null;
-    private String executor = null;
+    private String parameter;
+    private String executor;
     private EfikaCustomer customer;
 
     public GenericRequest(String parameter, String executor) {

@@ -84,6 +84,7 @@ public class HttpDAOImpl implements HttpDAO {
         String output;
         StringBuffer result = new StringBuffer();
         while ((output = br.readLine()) != null) {
+            System.out.println("OUTPUT -> "+output);
             result.append(output);
         }
         httpClient.close();
