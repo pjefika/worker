@@ -8,15 +8,15 @@ package dao.impl.customer;
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.Urls;
+import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
 import model.dto.cert.CustomerCertificationDTO;
-import model.dto.input.CertiticationInput;
 import util.JacksonMapper;
 
 public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
-    public CustomerCertificationDTO certify(CertiticationInput input) throws Exception {
+    public CustomerCertificationDTO certify(GenericRequest input) throws Exception {
 
         JacksonMapper<CustomerCertificationDTO> mapper = new JacksonMapper(CustomerCertificationDTO.class);
         return mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CERTIFICATION.getUrl(),

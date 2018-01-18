@@ -13,9 +13,9 @@ public enum Urls {
 
     CUSTOMERAPI_CADASTRO("http://10.40.195.81:8080/customerAPI/customer/findByParameter"),
     CUSTOMERAPI_CERTIFICATION("http://10.40.195.81:8080/customerAPI/certification/execByParam"),
-    QUEUE_COMPLETE_TASK("http://localhost:8080/queueAPI/queue/completeTask"),
-    QUEUE("http://localhost:8080/queueAPI/queue/"),
-    AUTH("http://localhost:8080/efikaAuth/credencial/verificar");
+    QUEUE_COMPLETE_TASK("http://10.40.195.81:8080/queueAPI/queue/completeTask"),
+    QUEUE("http://10.40.195.81:8080/queueAPI/queue/"),
+    AUTH("http://10.40.195.81:8080/efikaAuth2/credencial/verificar");
 
     private final String valor;
 

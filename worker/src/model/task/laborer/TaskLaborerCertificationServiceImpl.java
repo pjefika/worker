@@ -6,6 +6,7 @@
 package model.task.laborer;
 
 import dao.factory.FactoryDAO;
+import io.swagger.model.GenericRequest;
 import model.dto.input.CertiticationInput;
 import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;
@@ -20,9 +21,10 @@ public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
     @Override
     public void processar() {
         CertiticationInput input = (CertiticationInput) task.getInput();
+        GenericRequest req = new GenericRequest(input.getInstancia(), input.getCustomer(), task.getExecutor());
         CertificationResponse resp = new CertificationResponse();
         try {
-            resp.setCertification(FactoryDAO.newCustomerDAO().certify(input));
+            resp.setCertification(FactoryDAO.newCustomerDAO().certify(req));
             resp.setState(TaskResultState.OK);
         } catch (Exception e) {
             resp.setState(TaskResultState.EXCEPTION);

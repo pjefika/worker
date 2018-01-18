@@ -5,10 +5,8 @@
  */
 package dao.impl.customer;
 
+import io.swagger.model.GenericRequest;
 import model.dto.cert.CustomerCertificationDTO;
-import model.dto.input.CertiticationInput;
-
-
 
 /**
  *
@@ -16,7 +14,6 @@ import model.dto.input.CertiticationInput;
  */
 public interface CustomerDAO {
 
-    public CustomerCertificationDTO certify(CertiticationInput input) throws Exception;
-
+    public CustomerCertificationDTO certify(GenericRequest input) throws Exception;
 
 }
