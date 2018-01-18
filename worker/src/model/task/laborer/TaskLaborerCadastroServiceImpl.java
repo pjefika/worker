@@ -3,37 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package model.task.laborer;
 
+import br.net.gvt.efika.customer.EfikaCustomer;
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.Urls;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
-import model.dto.cert.CustomerCertificationDTO;
-import model.dto.input.CertiticationInput;
-import model.dto.output.CertificationResponse;
+import model.dto.input.CadastroInput;
+import model.dto.output.CadastroResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
-import model.task.laborer.TaskLaborerAbstract;
-
 import util.JacksonMapper;
 
-public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
+public class TaskLaborerCadastroServiceImpl extends TaskLaborerAbstract {
 
-    public TaskLaborerCertificationServiceImpl(QueueTaskDTO task) {
+    public TaskLaborerCadastroServiceImpl(QueueTaskDTO task) {
         super(task);
     }
 
     @Override
     public void processar() {
-        CertiticationInput input = (CertiticationInput) task.getInput();
-        GenericRequest req = new GenericRequest(input.getInstancia(), input.getCustomer(), task.getExecutor());
-        CertificationResponse ret = new CertificationResponse();
+        CadastroInput input = (CadastroInput) task.getInput();
+        GenericRequest req = new GenericRequest(input.getInstancia(), task.getExecutor());
+        CadastroResponse ret = new CadastroResponse();
+        ret.setInstancia(input.getInstancia());
         try {
 //            System.out.println("REQPARACUSTOMERAPI -> " + new JacksonMapper(GenericRequest.class).serialize(req));
-            JacksonMapper<CustomerCertificationDTO> mapper = new JacksonMapper(CustomerCertificationDTO.class);
-            ret.setCertification(mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CERTIFICATION.getUrl(),
+            JacksonMapper<EfikaCustomer> mapper = new JacksonMapper(EfikaCustomer.class);
+            ret.setCustomer(mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CADASTRO.getUrl(),
                     req,
                     ContentType.JSON.getCont(), Charset.forName("UTF-8"))));
             ret.setState(TaskResultState.OK);
@@ -43,7 +42,6 @@ public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
         }
 
         this.task.setOutput(ret);
-//        System.out.println("RETORNOCUSTOMERAPI -> " + new JacksonMapper(CustomerCertificationDTO.class).serialize(ret));
     }
 
 }
