@@ -5,11 +5,9 @@
  */
 package model.task.laborer;
 
+import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import dao.factory.FactoryDAO;
 import io.swagger.model.GenericRequest;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import model.dto.cert.CustomerCertificationDTO;
 import model.dto.input.CertiticationInput;
 import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;

@@ -5,12 +5,12 @@
  */
 package dao.impl.customer;
 
+import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.Urls;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
-import model.dto.cert.CustomerCertificationDTO;
 import util.JacksonMapper;
 
 public class CustomerDAOImpl implements CustomerDAO {

@@ -5,8 +5,8 @@
  */
 package dao.impl.customer;
 
+import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import io.swagger.model.GenericRequest;
-import model.dto.cert.CustomerCertificationDTO;
 
 /**
  *
