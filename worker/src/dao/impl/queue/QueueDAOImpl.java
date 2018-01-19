@@ -10,6 +10,7 @@ import dao.http.ContentType;
 import dao.http.HttpDAO;
 import dao.http.Urls;
 import dao.request.RequestFactory;
+import java.nio.charset.Charset;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
 import util.JacksonMapper;
@@ -24,7 +25,7 @@ public class QueueDAOImpl implements QueueDAO {
         return mapper.deserialize(HTTP_DAO.post(
                 Urls.QUEUE.getValor() + "consumePendingTasks",
                 RequestFactory.queueRequest(),
-                ContentType.JSON.getValor(), null));
+                ContentType.JSON.getValor(), Charset.forName("UTF-8")));
     }
 
     @Override
@@ -33,7 +34,7 @@ public class QueueDAOImpl implements QueueDAO {
         return mapper.deserialize(HTTP_DAO.post(
                 Urls.QUEUE_COMPLETE_TASK.getValor(),
                 task,
-                ContentType.JSON.getValor(), null));
+                ContentType.JSON.getValor(), Charset.forName("UTF-8")));
     }
 
 }

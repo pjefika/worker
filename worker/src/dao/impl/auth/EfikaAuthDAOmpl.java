@@ -8,6 +8,7 @@ package dao.impl.auth;
 import dao.factory.FactoryDAO;
 import dao.http.ContentType;
 import dao.http.Urls;
+import java.nio.charset.Charset;
 import model.dto.input.AuthInput;
 import util.JacksonMapper;
 
@@ -23,7 +24,7 @@ public class EfikaAuthDAOmpl implements EfikaAuthDAO {
             return mapper.deserialize(FactoryDAO.createHttpDAO().post(
                     Urls.AUTH.getValor(),
                     req,
-                    ContentType.JSON.getValor(), null));
+                    ContentType.JSON.getValor(), Charset.forName("UTF-8")));
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("Falha ao consultar Serviço de Autenticação.");
