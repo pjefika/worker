@@ -17,8 +17,6 @@ public class Worker {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       
-        
         FactoryService.createTasksConsumerService().consume();
     }
 
