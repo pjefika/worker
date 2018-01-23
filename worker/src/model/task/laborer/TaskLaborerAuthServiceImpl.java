@@ -21,11 +21,14 @@ public class TaskLaborerAuthServiceImpl extends TaskLaborerAbstract {
     }
 
     @Override
-    public void processar(){
+    public void processar() {
         AuthResponse resp = new AuthResponse();
         try {
             resp.setMatch(FactoryDAO.newEfikaAuthDAO().verificarCredenciais((AuthInput) task.getInput()));
             resp.setState(TaskResultState.OK);
+            AuthInput input = (AuthInput) task.getInput();
+            input.setSenha("");
+            task.setInput(input);
         } catch (Exception e) {
             resp.setState(TaskResultState.EXCEPTION);
             resp.setExceptionMessage(e.getMessage());

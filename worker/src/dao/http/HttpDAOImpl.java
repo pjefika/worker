@@ -85,7 +85,7 @@ public class HttpDAOImpl implements HttpDAO {
         post.addHeader("Content-Type", contentType + "; charset=UTF-8");
 
         String json = new JacksonMapper(Object.class).serialize(obj);
-
+        System.out.println("URL -> " + url);
         System.out.println("POST -> " + json);
         post.setEntity(new StringEntity(json, Charset.forName("UTF-8")));
 
