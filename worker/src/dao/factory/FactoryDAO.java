@@ -5,6 +5,7 @@
  */
 package dao.factory;
 
+import dao.AbstractMongoDAO;
 import dao.impl.queue.QueueDAO;
 import dao.impl.queue.QueueDAOImpl;
 import dao.http.HttpDAO;
@@ -13,6 +14,9 @@ import dao.impl.auth.EfikaAuthDAO;
 import dao.impl.auth.EfikaAuthDAOmpl;
 import dao.impl.customer.CustomerDAO;
 import dao.impl.customer.CustomerDAOImpl;
+import dao.impl.queue.QueueDAOMirrorImpl;
+import model.dto.task.QueueTaskDTO;
+import model.entity.QueueTaskMirror;
 
 /**
  *
@@ -26,6 +30,10 @@ public class FactoryDAO {
 
     public static QueueDAO createQueueDAO() {
         return new QueueDAOImpl();
+    }
+
+    public static AbstractMongoDAO<QueueTaskMirror> createQueueDAOMirrorImpl() {
+        return new QueueDAOMirrorImpl();
     }
 
     public static EfikaAuthDAO newEfikaAuthDAO() {

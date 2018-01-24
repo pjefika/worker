@@ -7,6 +7,7 @@ package model.task.laborer;
 
 import dao.factory.FactoryDAO;
 import model.dto.task.QueueTaskDTO;
+import model.entity.QueueTaskMirror;
 
 /**
  *
@@ -22,7 +23,7 @@ public abstract class TaskLaborerAbstract implements TaskLaborerService {
 
     public void finalizar() {
         try {
-            FactoryDAO.createQueueDAO().completeTask(this.task);
+            FactoryDAO.createQueueDAOMirrorImpl().save(new QueueTaskMirror(FactoryDAO.createQueueDAO().completeTask(this.task)));
         } catch (Exception e) {
             e.printStackTrace();
         }
