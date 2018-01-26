@@ -6,6 +6,7 @@
 package dao.impl.customer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
+import fulltest.ValidacaoResult;
 import io.swagger.model.GenericRequest;
 
 /**
@@ -15,5 +16,7 @@ import io.swagger.model.GenericRequest;
 public interface CustomerDAO {
 
     public CustomerCertificationDTO certify(GenericRequest input) throws Exception;
+
+    public ValidacaoResult certifyRede(GenericRequest input) throws Exception;
 
 }

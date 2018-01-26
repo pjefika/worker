@@ -29,6 +29,10 @@ public class LaborerServiceFactory {
         if (task.getTask() == TasksEnum.CADASTRO) {
             return new TaskLaborerCadastroServiceImpl(task);
         }
+        if (task.getTask() == TasksEnum.CONF_REDE) {
+            return new TaskLaborerCadastroServiceImpl(task);
+        }
+        
         throw new Exception("Tarefa não implementada.");
     }
 
