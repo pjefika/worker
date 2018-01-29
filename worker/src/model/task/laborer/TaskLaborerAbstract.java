@@ -5,7 +5,7 @@
  */
 package model.task.laborer;
 
-import dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import model.dto.task.QueueTaskDTO;
 import model.entity.QueueTaskMirror;
 

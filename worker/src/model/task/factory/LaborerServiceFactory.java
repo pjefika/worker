@@ -8,7 +8,7 @@ package model.task.factory;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TasksEnum;
 import model.task.laborer.TaskLaborerCertificationServiceImpl;
-import model.task.laborer.TaskLaborerAuthServiceImpl;
+import model.task.laborer.TaskLaborerAuthServiceImpl1;
 import model.task.laborer.TaskLaborerService;
 
 /**
@@ -24,7 +24,7 @@ public class LaborerServiceFactory {
         }
 
         if (task.getTask() == TasksEnum.AUTH) {
-            return new TaskLaborerAuthServiceImpl(task);
+            return new TaskLaborerAuthServiceImpl1(task);
         }
 
         throw new Exception("Tarefa não implementada.");

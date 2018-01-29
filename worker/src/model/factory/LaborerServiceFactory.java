@@ -7,7 +7,7 @@ package model.factory;
 
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TasksEnum;
-import model.task.laborer.TaskLaborerAuthServiceImpl;
+import model.task.laborer.TaskLaborerAuthServiceImpl1;
 import model.task.laborer.TaskLaborerCadastroServiceImpl;
 import model.task.laborer.TaskLaborerCertificationServiceImpl;
 import model.task.laborer.TaskLaborerService;
@@ -21,7 +21,7 @@ public class LaborerServiceFactory {
     public static TaskLaborerService create(QueueTaskDTO task) throws Exception {
 
         if (task.getTask() == TasksEnum.AUTH) {
-            return new TaskLaborerAuthServiceImpl(task);
+            return new TaskLaborerAuthServiceImpl1(task);
         }
         if (task.getTask() == TasksEnum.CERTIFICATION) {
             return new TaskLaborerCertificationServiceImpl(task);

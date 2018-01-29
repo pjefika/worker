@@ -5,18 +5,18 @@
  */
 package model.task.laborer;
 
-import dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import dao.impl.auth.EfikaAuthDAO;
 import model.dto.input.AuthInput;
 import model.dto.output.AuthResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
 
-public class TaskLaborerAuthServiceImpl extends TaskLaborerAbstract {
+public class TaskLaborerAuthServiceImpl1 extends TaskLaborerAbstract {
 
-    private EfikaAuthDAO dao = FactoryDAO.newEfikaAuthDAO();
+    private EfikaAuthDAO dao = FactoryDAO.createEfikaAuthDAO();
 
-    public TaskLaborerAuthServiceImpl(QueueTaskDTO task) {
+    public TaskLaborerAuthServiceImpl1(QueueTaskDTO task) {
         super(task);
     }
 
@@ -24,15 +24,15 @@ public class TaskLaborerAuthServiceImpl extends TaskLaborerAbstract {
     public void processar() {
         AuthResponse resp = new AuthResponse();
         try {
-            resp.setMatch(FactoryDAO.newEfikaAuthDAO().verificarCredenciais((AuthInput) task.getInput()));
+            resp.setMatch(dao.verificarCredenciais((AuthInput) task.getInput()));
             resp.setState(TaskResultState.OK);
-            AuthInput input = (AuthInput) task.getInput();
-            input.setSenha("");
-            task.setInput(input);
         } catch (Exception e) {
             resp.setState(TaskResultState.EXCEPTION);
             resp.setExceptionMessage(e.getMessage());
         } finally {
+            AuthInput input = (AuthInput) task.getInput();
+            input.setSenha("");
+            task.setInput(input);
             this.task.setOutput(resp);
         }
     }

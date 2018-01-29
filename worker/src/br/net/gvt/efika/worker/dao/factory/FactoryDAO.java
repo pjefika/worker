@@ -3,19 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.factory;
+package br.net.gvt.efika.worker.dao.factory;
 
 import dao.AbstractMongoDAO;
 import dao.impl.queue.QueueDAO;
 import dao.impl.queue.QueueDAOImpl;
-import dao.http.HttpDAO;
-import dao.http.HttpDAOImpl;
+import br.net.gvt.efika.worker.dao.http.HttpDAO;
+import br.net.gvt.efika.worker.dao.http.HttpDAOImpl;
 import dao.impl.auth.EfikaAuthDAO;
 import dao.impl.auth.EfikaAuthDAOmpl;
 import dao.impl.customer.CustomerDAO;
 import dao.impl.customer.CustomerDAOImpl;
 import dao.impl.queue.QueueDAOMirrorImpl;
-import model.dto.task.QueueTaskDTO;
 import model.entity.QueueTaskMirror;
 
 /**
@@ -36,7 +35,7 @@ public class FactoryDAO {
         return new QueueDAOMirrorImpl();
     }
 
-    public static EfikaAuthDAO newEfikaAuthDAO() {
+    public static EfikaAuthDAO createEfikaAuthDAO() {
         return new EfikaAuthDAOmpl();
     }
 
