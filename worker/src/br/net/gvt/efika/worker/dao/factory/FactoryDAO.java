@@ -21,6 +21,7 @@ import fulltest.ValidacaoResult;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.worker.dao.model.entity.QueueTaskMirror;
+import java.nio.charset.Charset;
 
 /**
  *
@@ -46,6 +47,11 @@ public class FactoryDAO {
 
     public static HttpDAO createHttpPendingTaskResponseDAO() {
         return new HttpDAOGenericImpl<PendingTasksResponseDTO>(PendingTasksResponseDTO.class) {
+            @Override
+            public Charset getResponseCharset() {
+//                return Charset.forName("UTF-8");
+return null;
+            }
         };
     }
 
