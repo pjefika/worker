@@ -10,17 +10,17 @@ import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import br.net.gvt.efika.util.dao.http.HttpDAO;
 import br.net.gvt.efika.util.dao.http.HttpDAOGenericImpl;
 import dao.AbstractMongoDAO;
-import dao.impl.queue.QueueDAO;
-import dao.impl.queue.QueueDAOImpl;
-import dao.impl.auth.EfikaAuthDAO;
-import dao.impl.auth.EfikaAuthDAOmpl;
-import dao.impl.customer.CustomerDAO;
-import dao.impl.customer.CustomerDAOImpl;
-import dao.impl.queue.QueueDAOMirrorImpl;
+import br.net.gvt.efika.worker.dao.impl.queue.QueueDAO;
+import br.net.gvt.efika.worker.dao.impl.queue.QueueDAOImpl;
+import br.net.gvt.efika.worker.dao.impl.auth.EfikaAuthDAO;
+import br.net.gvt.efika.worker.dao.impl.auth.EfikaAuthDAOmpl;
+import br.net.gvt.efika.worker.dao.impl.customer.CustomerDAO;
+import br.net.gvt.efika.worker.dao.impl.customer.CustomerDAOImpl;
+import br.net.gvt.efika.worker.dao.impl.queue.QueueDAOMirrorImpl;
 import fulltest.ValidacaoResult;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
-import model.entity.QueueTaskMirror;
+import br.net.gvt.efika.worker.dao.model.entity.QueueTaskMirror;
 
 /**
  *

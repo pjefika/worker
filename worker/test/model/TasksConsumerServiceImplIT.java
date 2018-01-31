@@ -5,7 +5,7 @@
  */
 package model;
 
-import model.task.TasksConsumerServiceImpl;
+import br.net.gvt.efika.worker.dao.model.task.TasksConsumerServiceImpl;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
