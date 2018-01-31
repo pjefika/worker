@@ -5,10 +5,10 @@
  */
 package dao.impl.queue;
 
-import dao.factory.FactoryDAO;
-import dao.http.ContentType;
-import dao.http.HttpDAO;
-import dao.http.Urls;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.http.ContentType;
+import br.net.gvt.efika.worker.dao.http.HttpDAO;
+import br.net.gvt.efika.worker.dao.http.Urls;
 import dao.request.RequestFactory;
 import java.nio.charset.Charset;
 import model.dto.task.PendingTasksResponseDTO;

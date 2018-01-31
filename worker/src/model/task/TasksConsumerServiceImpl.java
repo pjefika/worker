@@ -5,7 +5,7 @@
  */
 package model.task;
 
-import dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import dao.impl.queue.QueueDAO;
 import util.thread.EfikaThread;
 

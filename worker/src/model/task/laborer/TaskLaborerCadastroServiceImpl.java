@@ -6,9 +6,9 @@
 package model.task.laborer;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
-import dao.factory.FactoryDAO;
-import dao.http.ContentType;
-import dao.http.Urls;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.http.ContentType;
+import br.net.gvt.efika.worker.dao.http.Urls;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
 import model.dto.input.CadastroInput;

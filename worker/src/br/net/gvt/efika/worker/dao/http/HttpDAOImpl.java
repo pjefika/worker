@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.http;
+package br.net.gvt.efika.worker.dao.http;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

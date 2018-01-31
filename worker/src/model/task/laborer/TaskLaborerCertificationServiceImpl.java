@@ -6,7 +6,7 @@
 package model.task.laborer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
-import dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import io.swagger.model.GenericRequest;
 import model.dto.input.CertiticationInput;
 import model.dto.output.CertificationResponse;

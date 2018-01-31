@@ -6,9 +6,9 @@
 package dao.impl.customer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
-import dao.factory.FactoryDAO;
-import dao.http.ContentType;
-import dao.http.Urls;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
+import br.net.gvt.efika.worker.dao.http.ContentType;
+import br.net.gvt.efika.worker.dao.http.Urls;
 import fulltest.ValidacaoResult;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;

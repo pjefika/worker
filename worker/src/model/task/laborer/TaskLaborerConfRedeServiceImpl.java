@@ -27,23 +27,23 @@ public class TaskLaborerConfRedeServiceImpl extends TaskLaborerAbstract {
         GenericRequest req = new GenericRequest(input.getInstancia(), input.getCustomer(), task.getExecutor());
         ConfRedeResponse resp = new ConfRedeResponse();
   
-        try {
-            ValidacaoResult cert = FactoryDAO.newCustomerDAO().certifyRede(req);
-            try {
-                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            resp.setTabRede(cert);
-            resp.setState(TaskResultState.OK);
-        } catch (Exception e) {
-            System.out.println("EXCESSAO ->"+ e.getMessage());
-            e.printStackTrace();
-            resp.setState(TaskResultState.EXCEPTION);
-            resp.setExceptionMessage(e.getMessage());
-        } finally {
-            this.task.setOutput(resp);
-        }
+//        try {
+//            ValidacaoResult cert = FactoryDAO.newCustomerDAO().certifyRede(req);
+//            try {
+//                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
+//            } catch (Exception ex) {
+//                ex.printStackTrace();
+//            }
+//            resp.setTabRede(cert);
+//            resp.setState(TaskResultState.OK);
+//        } catch (Exception e) {
+//            System.out.println("EXCESSAO ->"+ e.getMessage());
+//            e.printStackTrace();
+//            resp.setState(TaskResultState.EXCEPTION);
+//            resp.setExceptionMessage(e.getMessage());
+//        } finally {
+//            this.task.setOutput(resp);
+//        }
     }
 
 }
