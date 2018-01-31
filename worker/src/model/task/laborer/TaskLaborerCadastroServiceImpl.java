@@ -7,7 +7,6 @@ package model.task.laborer;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.ContentType;
 import br.net.gvt.efika.worker.dao.http.Urls;
 import io.swagger.model.GenericRequest;
 import java.nio.charset.Charset;
@@ -31,10 +30,7 @@ public class TaskLaborerCadastroServiceImpl extends TaskLaborerAbstract {
         ret.setInstancia(input.getInstancia());
         try {
 //            System.out.println("REQPARACUSTOMERAPI -> " + new JacksonMapper(GenericRequest.class).serialize(req));
-            JacksonMapper<EfikaCustomer> mapper = new JacksonMapper(EfikaCustomer.class);
-            ret.setCustomer(mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CADASTRO.getUrl(),
-                    req,
-                    ContentType.JSON.getCont(), Charset.forName("UTF-8"))));
+            ret.setCustomer((EfikaCustomer) FactoryDAO.createHttpCustomerDAO().post(Urls.CUSTOMERAPI_CADASTRO.getUrl(), req));
             ret.setState(TaskResultState.OK);
         } catch (Exception e) {
             ret.setExceptionMessage(e.getMessage());

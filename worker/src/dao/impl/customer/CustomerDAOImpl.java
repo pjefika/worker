@@ -7,29 +7,21 @@ package dao.impl.customer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.ContentType;
 import br.net.gvt.efika.worker.dao.http.Urls;
 import fulltest.ValidacaoResult;
 import io.swagger.model.GenericRequest;
-import java.nio.charset.Charset;
-import util.JacksonMapper;
 
 public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public CustomerCertificationDTO certify(GenericRequest input) throws Exception {
 
-        JacksonMapper<CustomerCertificationDTO> mapper = new JacksonMapper(CustomerCertificationDTO.class);
-        return mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CERTIFICATION.getUrl(),
-                input,
-                ContentType.JSON.getCont(), Charset.forName("UTF-8")));
+        return (CustomerCertificationDTO) FactoryDAO.createHttpCertificationDAO().post(Urls.CUSTOMERAPI_CERTIFICATION.getUrl(), input);
     }
 
     @Override
     public ValidacaoResult certifyRede(GenericRequest input) throws Exception {
-        JacksonMapper<ValidacaoResult> mapper = new JacksonMapper(ValidacaoResult.class);
-        return mapper.deserialize(FactoryDAO.createHttpDAO().post(Urls.CUSTOMERAPI_CONF_REDE.getUrl(),
-                input,
-                ContentType.JSON.getCont(), Charset.forName("UTF-8")));
+
+        return (ValidacaoResult) FactoryDAO.createHttpValidacaoResultDAO().post(Urls.CUSTOMERAPI_CONF_REDE.getUrl(), input);
     }
 }

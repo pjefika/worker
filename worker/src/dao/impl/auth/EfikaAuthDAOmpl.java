@@ -6,7 +6,6 @@
 package dao.impl.auth;
 
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.ContentType;
 import br.net.gvt.efika.worker.dao.http.Urls;
 import java.nio.charset.Charset;
 import model.dto.input.AuthInput;
@@ -20,11 +19,7 @@ public class EfikaAuthDAOmpl implements EfikaAuthDAO {
             VerificarCredencialRequest req = new VerificarCredencialRequest();
             req.setLogin(cred.getLogin());
             req.setSenha(cred.getSenha());
-            JacksonMapper<Boolean> mapper = new JacksonMapper(Boolean.class);
-            return mapper.deserialize(FactoryDAO.createHttpDAO().post(
-                    Urls.AUTH.getValor(),
-                    req,
-                    ContentType.JSON.getValor(), Charset.forName("UTF-8")));
+            return (Boolean) FactoryDAO.createHttpBooleanDAO().post(Urls.AUTH.getValor(), req);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("Falha ao consultar Serviço de Autenticação.");
