@@ -7,6 +7,7 @@ package br.net.gvt.efika.worker.dao.factory;
 
 import br.net.gvt.efika.customer.EfikaCustomer;
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
+import br.net.gvt.efika.util.dao.http.ContentType;
 import br.net.gvt.efika.util.dao.http.HttpDAO;
 import br.net.gvt.efika.util.dao.http.HttpDAOGenericImpl;
 import dao.AbstractMongoDAO;
@@ -48,9 +49,8 @@ public class FactoryDAO {
     public static HttpDAO createHttpPendingTaskResponseDAO() {
         return new HttpDAOGenericImpl<PendingTasksResponseDTO>(PendingTasksResponseDTO.class) {
             @Override
-            public Charset getResponseCharset() {
-//                return Charset.forName("UTF-8");
-return null;
+            public String getContentType() {
+                return ContentType.JSON.getCont();
             }
         };
     }

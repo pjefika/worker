@@ -6,14 +6,14 @@
 package br.net.gvt.efika.worker.dao.model.task.laborer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
-import dao.factory.FactoryDAO;
-import fulltest.ValidacaoResult;
+import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
+import br.net.gvt.efika.worker.util.JacksonMapper;
+import fulltest.ValidacaoResult;
 import model.dto.input.CertiticationInput;
 import model.dto.output.ConfRedeResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
-import br.net.gvt.efika.worker.util.JacksonMapper;
 
 public class TaskLaborerConfRedeServiceImpl extends TaskLaborerAbstract {
 
@@ -26,24 +26,22 @@ public class TaskLaborerConfRedeServiceImpl extends TaskLaborerAbstract {
         CertiticationInput input = (CertiticationInput) task.getInput();
         GenericRequest req = new GenericRequest(input.getInstancia(), input.getCustomer(), task.getExecutor());
         ConfRedeResponse resp = new ConfRedeResponse();
-  
-//        try {
-//            ValidacaoResult cert = FactoryDAO.newCustomerDAO().certifyRede(req);
-//            try {
-//                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//            resp.setTabRede(cert);
-//            resp.setState(TaskResultState.OK);
-//        } catch (Exception e) {
-//            System.out.println("EXCESSAO ->"+ e.getMessage());
-//            e.printStackTrace();
-//            resp.setState(TaskResultState.EXCEPTION);
-//            resp.setExceptionMessage(e.getMessage());
-//        } finally {
-//            this.task.setOutput(resp);
-//        }
+
+        try {
+            ValidacaoResult cert = FactoryDAO.newCustomerDAO().certifyRede(req);
+            try {
+                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            resp.setTabRede(cert);
+            resp.setState(TaskResultState.OK);
+        } catch (Exception e) {
+            resp.setState(TaskResultState.EXCEPTION);
+            resp.setExceptionMessage(e.getMessage());
+        } finally {
+            this.task.setOutput(resp);
+        }
     }
 
 }
