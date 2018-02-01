@@ -11,6 +11,7 @@ import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerAuthServiceImpl
 import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerCadastroServiceImpl;
 import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerCertificationServiceImpl;
 import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerConfRedeServiceImpl;
+import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerOntsDispServiceImpl;
 import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerService;
 
 /**
@@ -32,6 +33,9 @@ public class LaborerServiceFactory {
         }
         if (task.getTask() == TasksEnum.CONF_REDE) {
             return new TaskLaborerConfRedeServiceImpl(task);
+        }
+        if (task.getTask() == TasksEnum.ONTS_DISP) {
+            return new TaskLaborerOntsDispServiceImpl(task);
         }
 
         throw new Exception("Tarefa não implementada.");

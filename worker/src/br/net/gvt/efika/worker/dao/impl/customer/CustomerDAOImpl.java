@@ -10,6 +10,8 @@ import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.dao.http.Urls;
 import fulltest.ValidacaoResult;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
+import java.util.List;
+import telecom.properties.gpon.SerialOntGpon;
 
 public class CustomerDAOImpl implements CustomerDAO {
 
@@ -23,5 +25,10 @@ public class CustomerDAOImpl implements CustomerDAO {
     public ValidacaoResult certifyRede(GenericRequest input) throws Exception {
 
         return (ValidacaoResult) FactoryDAO.createHttpValidacaoResultDAO().post(Urls.CUSTOMERAPI_CONF_REDE.getUrl(), input);
+    }
+
+    @Override
+    public List<SerialOntGpon> getOntsDisp(GenericRequest input) throws Exception {
+        return (List<SerialOntGpon>) FactoryDAO.createHttpListUtf8DAO().post(Urls.CUSTOMERAPI_ONTS_DISP.getUrl(), input);
     }
 }

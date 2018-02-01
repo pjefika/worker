@@ -8,6 +8,8 @@ package br.net.gvt.efika.worker.dao.impl.customer;
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import fulltest.ValidacaoResult;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
+import java.util.List;
+import telecom.properties.gpon.SerialOntGpon;
 
 /**
  *
@@ -18,5 +20,7 @@ public interface CustomerDAO {
     public CustomerCertificationDTO certify(GenericRequest input) throws Exception;
 
     public ValidacaoResult certifyRede(GenericRequest input) throws Exception;
+
+    public List<SerialOntGpon> getOntsDisp(GenericRequest input) throws Exception;
 
 }
