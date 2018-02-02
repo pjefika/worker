@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.worker.dao.model.task.laborer;
+package br.net.gvt.efika.worker.model.task.laborer;
 
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import model.dto.task.QueueTaskDTO;
-import br.net.gvt.efika.worker.dao.model.entity.QueueTaskMirror;
+import br.net.gvt.efika.worker.model.entity.QueueTaskMirror;
 
 /**
  *

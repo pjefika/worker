@@ -7,7 +7,7 @@ package br.net.gvt.efika.worker.dao.impl.queue;
 
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.dao.http.Urls;
-import br.net.gvt.efika.worker.dao.request.RequestFactory;
+import br.net.gvt.efika.worker.request.RequestFactory;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
 

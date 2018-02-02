@@ -31,4 +31,9 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List<SerialOntGpon> getOntsDisp(GenericRequest input) throws Exception {
         return (List<SerialOntGpon>) FactoryDAO.createHttpListUtf8DAO().post(Urls.CUSTOMERAPI_ONTS_DISP.getUrl(), input);
     }
+
+    @Override
+    public ValidacaoResult setOntToOlt(GenericRequest input) throws Exception {
+        return (ValidacaoResult) FactoryDAO.createHttpValidacaoResultUtf8DAO().post(Urls.CUSTOMERAPI_SET_ONT.getUrl(), input);
+    }
 }

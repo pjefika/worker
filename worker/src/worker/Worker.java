@@ -5,7 +5,7 @@
  */
 package worker;
 
-import br.net.gvt.efika.worker.dao.model.factory.FactoryService;
+import br.net.gvt.efika.worker.model.factory.FactoryService;
 
 /**
  *

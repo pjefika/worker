@@ -5,7 +5,7 @@
  */
 package model.task.laborer;
 
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerAuthServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerAuthServiceImpl;
 import mock.QueueTaskMock;
 import model.dto.task.QueueTaskDTO;
 import org.junit.After;

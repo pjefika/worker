@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.worker.dao.model.task;
+package br.net.gvt.efika.worker.model.task;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.dto.task.QueueTaskDTO;
-import br.net.gvt.efika.worker.dao.model.factory.LaborerServiceFactory;
+import br.net.gvt.efika.worker.model.factory.LaborerServiceFactory;
 
 /**
  *

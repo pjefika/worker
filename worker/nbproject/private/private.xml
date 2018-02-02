@@ -8,16 +8,7 @@
             <file>file:/C:/Users/G0042204/Documents/NetBeansProjects/workerAPI/worker/src/br/net/gvt/efika/worker/dao/http/HttpDAOImpl.java</file>
         </group>
         <group>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/model/task/laborer/TaskLaborerConfRedeServiceImpl.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/worker/Worker.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/impl/queue/QueueDAOImpl.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/model/task/TasksConsumerServiceImpl.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/http/Urls.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/impl/customer/CustomerDAOImpl.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/model/task/laborer/TaskLaborerCadastroServiceImpl.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/model/task/TasksConsumerService.java</file>
             <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/factory/FactoryDAO.java</file>
-            <file>file:/C:/Users/G0041775/Documents/NetBeansProjects/worker/worker/src/br/net/gvt/efika/worker/dao/model/task/laborer/TaskLaborerAuthServiceImpl.java</file>
         </group>
     </open-files>
 </project-private>

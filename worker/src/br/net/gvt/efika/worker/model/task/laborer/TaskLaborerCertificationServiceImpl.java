@@ -3,22 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.worker.dao.model.task.laborer;
+package br.net.gvt.efika.worker.model.task.laborer;
 
 import br.net.gvt.efika.model.certification.CustomerCertificationDTO;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
-import br.net.gvt.efika.worker.util.JacksonMapper;
-import java.util.List;
 import model.dto.input.CertiticationInput;
-import model.dto.output.OntsDispResponse;
+import model.dto.output.CertificationResponse;
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TaskResultState;
-import telecom.properties.gpon.SerialOntGpon;
+import br.net.gvt.efika.worker.util.JacksonMapper;
 
-public class TaskLaborerOntsDispServiceImpl extends TaskLaborerAbstract {
+public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
 
-    public TaskLaborerOntsDispServiceImpl(QueueTaskDTO task) {
+    public TaskLaborerCertificationServiceImpl(QueueTaskDTO task) {
         super(task);
     }
 
@@ -26,18 +24,20 @@ public class TaskLaborerOntsDispServiceImpl extends TaskLaborerAbstract {
     public void processar() {
         CertiticationInput input = (CertiticationInput) task.getInput();
         GenericRequest req = new GenericRequest(input.getInstancia(), input.getCustomer(), task.getExecutor());
-        OntsDispResponse resp = new OntsDispResponse();
-
+        CertificationResponse resp = new CertificationResponse();
+  
         try {
-            List<SerialOntGpon> cert = FactoryDAO.newCustomerDAO().getOntsDisp(req);
+            CustomerCertificationDTO cert = FactoryDAO.newCustomerDAO().certify(req);
             try {
-                System.out.println("RESP ->" + new JacksonMapper(List.class).serialize(cert));
+                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-            resp.setOnts(cert);
+            resp.setCertification(cert);
             resp.setState(TaskResultState.OK);
         } catch (Exception e) {
+            System.out.println("EXCESSAO ->"+ e.getMessage());
+            e.printStackTrace();
             resp.setState(TaskResultState.EXCEPTION);
             resp.setExceptionMessage(e.getMessage());
         } finally {

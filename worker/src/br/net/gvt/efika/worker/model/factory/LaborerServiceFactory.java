@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.worker.dao.model.factory;
+package br.net.gvt.efika.worker.model.factory;
 
 import model.dto.task.QueueTaskDTO;
 import model.enuns.TasksEnum;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerAuthServiceImpl;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerCadastroServiceImpl;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerCertificationServiceImpl;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerConfRedeServiceImpl;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerOntsDispServiceImpl;
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerService;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerAuthServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerCadastroServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerCertificationServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerConfRedeServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerOntsDispServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerService;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerSetOntToOltServiceImpl;
 
 /**
  *
@@ -36,6 +37,9 @@ public class LaborerServiceFactory {
         }
         if (task.getTask() == TasksEnum.ONTS_DISP) {
             return new TaskLaborerOntsDispServiceImpl(task);
+        }
+        if (task.getTask() == TasksEnum.SET_ONT) {
+            return new TaskLaborerSetOntToOltServiceImpl(task);
         }
 
         throw new Exception("Tarefa não implementada.");

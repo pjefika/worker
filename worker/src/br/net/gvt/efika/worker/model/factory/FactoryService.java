@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.worker.dao.model.factory;
+package br.net.gvt.efika.worker.model.factory;
 
-import br.net.gvt.efika.worker.dao.model.task.TasksConsumerService;
-import br.net.gvt.efika.worker.dao.model.task.TasksConsumerServiceImpl;
+import br.net.gvt.efika.worker.model.task.TasksConsumerService;
+import br.net.gvt.efika.worker.model.task.TasksConsumerServiceImpl;
 
 /**
  *

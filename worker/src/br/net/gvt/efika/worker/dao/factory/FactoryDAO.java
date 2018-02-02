@@ -21,7 +21,7 @@ import br.net.gvt.efika.worker.dao.impl.queue.QueueDAOMirrorImpl;
 import fulltest.ValidacaoResult;
 import model.dto.task.PendingTasksResponseDTO;
 import model.dto.task.QueueTaskDTO;
-import br.net.gvt.efika.worker.dao.model.entity.QueueTaskMirror;
+import br.net.gvt.efika.worker.model.entity.QueueTaskMirror;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -49,6 +49,15 @@ public class FactoryDAO {
 
     public static HttpDAO createHttpListUtf8DAO() {
         return new HttpDAOGenericImpl<List>(List.class) {
+            @Override
+            public Charset getResponseCharset() {
+                return Charset.forName("UTF-8");
+            }
+        };
+    }
+
+    public static HttpDAO createHttpValidacaoResultUtf8DAO() {
+        return new HttpDAOGenericImpl<ValidacaoResult>(ValidacaoResult.class) {
             @Override
             public Charset getResponseCharset() {
                 return Charset.forName("UTF-8");

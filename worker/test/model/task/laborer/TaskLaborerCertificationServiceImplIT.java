@@ -5,7 +5,7 @@
  */
 package model.task.laborer;
 
-import br.net.gvt.efika.worker.dao.model.task.laborer.TaskLaborerCertificationServiceImpl;
+import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerCertificationServiceImpl;
 import model.dto.task.QueueTaskDTO;
 import org.junit.After;
 import org.junit.AfterClass;

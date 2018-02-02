@@ -23,4 +23,6 @@ public interface CustomerDAO {
 
     public List<SerialOntGpon> getOntsDisp(GenericRequest input) throws Exception;
 
+    public ValidacaoResult setOntToOlt(GenericRequest input) throws Exception;
+
 }

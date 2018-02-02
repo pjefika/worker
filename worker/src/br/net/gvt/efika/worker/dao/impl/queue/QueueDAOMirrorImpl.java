@@ -6,7 +6,7 @@
 package br.net.gvt.efika.worker.dao.impl.queue;
 
 import dao.AbstractMongoDAO;
-import br.net.gvt.efika.worker.dao.model.entity.QueueTaskMirror;
+import br.net.gvt.efika.worker.model.entity.QueueTaskMirror;
 
 public class QueueDAOMirrorImpl extends AbstractMongoDAO<QueueTaskMirror> {
 
