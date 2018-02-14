@@ -33,6 +33,10 @@ public class FactoryDAO {
 
     public static HttpDAO createHttpCertificationDAO() {
         return new HttpDAOGenericImpl<CustomerCertificationDTO>(CustomerCertificationDTO.class) {
+            @Override
+            public Charset getResponseCharset() {
+                return Charset.forName("UTF-8");
+            }
         };
     }
 
