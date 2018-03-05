@@ -19,7 +19,7 @@ public class EfikaAuthDAOmpl implements EfikaAuthDAO {
             req.setSenha(cred.getSenha());
 
             FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
-            return (Boolean) fac.createWithoutProxy().post(Urls.AUTH.getValor(), req);
+            return fac.createWithoutProxy().post(Urls.AUTH.getValor(), req);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("Falha ao consultar Serviço de Autenticação.");
