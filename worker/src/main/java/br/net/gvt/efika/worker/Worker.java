@@ -5,7 +5,11 @@
  */
 package br.net.gvt.efika.worker;
 
+import br.net.gvt.efika.util.thread.EfikaThread;
 import br.net.gvt.efika.worker.model.factory.FactoryService;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +21,17 @@ public class Worker {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        FactoryService.createTasksConsumerService().consume();
+        do {
+            new EfikaThread(() -> {
+                FactoryService.createTasksConsumerService().consume();
+            });
+            try {
+                System.out.println("Sleep:" + Calendar.getInstance());
+                Thread.sleep(15000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Worker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } while (true);
     }
 
 }
