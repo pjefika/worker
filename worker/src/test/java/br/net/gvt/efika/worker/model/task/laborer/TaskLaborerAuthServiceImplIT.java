@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.task.laborer;
+package br.net.gvt.efika.worker.model.task.laborer;
 
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerAuthServiceImpl;
-import mock.QueueTaskMock;
+import br.net.gvt.efika.worker.mock.QueueTaskMock;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

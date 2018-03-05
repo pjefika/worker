@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mock;
+package br.net.gvt.efika.worker.mock;
 
 import br.net.gvt.efika.queue.model.dto.input.AuthInput;
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;

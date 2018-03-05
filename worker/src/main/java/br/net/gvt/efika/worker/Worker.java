@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package worker;
+package br.net.gvt.efika.worker;
 
 import br.net.gvt.efika.worker.model.factory.FactoryService;
 

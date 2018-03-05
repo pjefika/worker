@@ -7,7 +7,7 @@ package br.net.gvt.efika.worker.dao.impl.auth;
 
 import br.net.gvt.efika.queue.model.dto.input.AuthInput;
 import br.net.gvt.efika.util.dao.http.Urls;
-import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
+import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
 
 public class EfikaAuthDAOmpl implements EfikaAuthDAO {
 
@@ -17,7 +17,9 @@ public class EfikaAuthDAOmpl implements EfikaAuthDAO {
             VerificarCredencialRequest req = new VerificarCredencialRequest();
             req.setLogin(cred.getLogin());
             req.setSenha(cred.getSenha());
-            return (Boolean) FactoryDAO.createHttpBooleanDAO().post(Urls.AUTH.getValor(), req);
+
+            FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+            return (Boolean) fac.createWithoutProxy().post(Urls.AUTH.getValor(), req);
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("Falha ao consultar Serviço de Autenticação.");

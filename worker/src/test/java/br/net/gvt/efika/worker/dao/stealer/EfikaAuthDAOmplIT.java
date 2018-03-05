@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao.stealer;
+package br.net.gvt.efika.worker.dao.stealer;
 
 import br.net.gvt.efika.queue.model.dto.input.AuthInput;
 import br.net.gvt.efika.worker.dao.impl.auth.EfikaAuthDAOmpl;

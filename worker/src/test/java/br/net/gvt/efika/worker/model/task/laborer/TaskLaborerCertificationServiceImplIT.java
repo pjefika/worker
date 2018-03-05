@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.task.laborer;
+package br.net.gvt.efika.worker.model.task.laborer;
 
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerCertificationServiceImpl;
