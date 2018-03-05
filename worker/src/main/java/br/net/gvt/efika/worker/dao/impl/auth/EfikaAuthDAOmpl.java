@@ -6,8 +6,8 @@
 package br.net.gvt.efika.worker.dao.impl.auth;
 
 import br.net.gvt.efika.queue.model.dto.input.AuthInput;
+import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.Urls;
 
 public class EfikaAuthDAOmpl implements EfikaAuthDAO {
 

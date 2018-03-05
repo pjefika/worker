@@ -8,8 +8,8 @@ package br.net.gvt.efika.worker.dao.impl.customer;
 import br.net.gvt.efika.customer.model.certification.CustomerCertificationDTO;
 import br.net.gvt.efika.fulltest.model.fulltest.ValidacaoResult;
 import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.SerialOntGpon;
+import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.Urls;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
 import java.util.List;
 

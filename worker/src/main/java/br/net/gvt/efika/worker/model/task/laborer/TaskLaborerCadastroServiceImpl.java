@@ -10,8 +10,8 @@ import br.net.gvt.efika.queue.model.dto.input.CadastroInput;
 import br.net.gvt.efika.queue.model.dto.output.CadastroResponse;
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.queue.model.enuns.TaskResultState;
+import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.http.Urls;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
 
 public class TaskLaborerCadastroServiceImpl extends TaskLaborerAbstract {
