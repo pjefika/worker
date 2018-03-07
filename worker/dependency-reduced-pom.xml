@@ -5,6 +5,7 @@
   <artifactId>worker</artifactId>
   <version>1.0.0</version>
   <build>
+    <finalName>worker</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
@@ -28,9 +29,7 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.12.4</version>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
+        <configuration />
       </plugin>
     </plugins>
   </build>

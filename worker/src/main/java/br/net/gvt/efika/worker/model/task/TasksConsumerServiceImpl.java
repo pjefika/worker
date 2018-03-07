@@ -5,28 +5,26 @@
  */
 package br.net.gvt.efika.worker.model.task;
 
+import br.net.gvt.efika.util.thread.EfikaThread;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.dao.impl.queue.QueueDAO;
-import br.net.gvt.efika.worker.util.thread.EfikaThread;
-
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TasksConsumerServiceImpl implements TasksConsumerService {
-
-    private QueueDAO dao = FactoryDAO.createQueueDAO();
 
     @Override
     public void consume() {
         try {
-            dao.consumePendingTasks().getTasks().forEach((t) -> {
+            FactoryDAO.createQueueDAO().consumePendingTasks().getTasks().forEach((t) -> {
                 System.out.println(t.getTask().getDesc());
                 EfikaThread et = new EfikaThread(new TasksConsumerThread(t));
-//                try {
-//                    et.join();
-//                    et.possuiException();
-//                } catch (Exception ex) {
-//                    Logger.getLogger(TasksConsumerServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+                try {
+                    et.join();
+                    et.possuiException();
+                } catch (Exception ex) {
+                    Logger.getLogger(TasksConsumerServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
             });
         } catch (Exception e) {
             e.printStackTrace();
