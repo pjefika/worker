@@ -36,7 +36,6 @@ public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
             resp.setCertification(cert);
             resp.setState(TaskResultState.OK);
         } catch (Exception e) {
-            System.out.println("EXCESSAO ->"+ e.getMessage());
             e.printStackTrace();
             resp.setState(TaskResultState.EXCEPTION);
             resp.setExceptionMessage(e.getMessage());

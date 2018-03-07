@@ -10,7 +10,6 @@ import br.net.gvt.efika.fulltest.model.fulltest.ValidacaoResult;
 import br.net.gvt.efika.fulltest.model.telecom.properties.gpon.SerialOntGpon;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
-import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
 import java.util.List;
 
@@ -31,7 +30,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public List<SerialOntGpon> getOntsDisp(GenericRequest input) throws Exception {
         FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
-        return (List) fac.createWithoutProxy().post(Urls.CUSTOMERAPI_ONTS_DISP.getValor(), input);
+        return (List<SerialOntGpon>) fac.createWithoutProxy().post(Urls.CUSTOMERAPI_ONTS_DISP.getValor(), input);
     }
 
     @Override
