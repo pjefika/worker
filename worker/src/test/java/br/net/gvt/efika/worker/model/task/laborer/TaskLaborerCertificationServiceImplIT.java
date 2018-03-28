@@ -6,13 +6,12 @@
 package br.net.gvt.efika.worker.model.task.laborer;
 
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
-import br.net.gvt.efika.worker.model.task.laborer.TaskLaborerCertificationServiceImpl;
+import br.net.gvt.efika.util.json.JacksonMapper;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import br.net.gvt.efika.worker.util.JacksonMapper;
 
 /**
  *
@@ -43,8 +42,8 @@ public class TaskLaborerCertificationServiceImplIT {
      * Test of processar method, of class TaskLaborerCertificationServiceImpl.
      */
     @Test
-    public void testProcessar() throws Exception {
-        System.out.println("processar");
+    public void executar() throws Exception {
+        System.out.println("executar");
         QueueTaskDTO t;
         t = (QueueTaskDTO) new JacksonMapper(QueueTaskDTO.class).deserialize("{  \n"
                 + "   \"task\":\"CERTIFICATION\",\n"
@@ -54,8 +53,9 @@ public class TaskLaborerCertificationServiceImplIT {
                 + "   },\n"
                 + "   \"executor\":\"G0041775\"\n"
                 + "}");
-        TaskLaborerCertificationServiceImpl instance = new TaskLaborerCertificationServiceImpl(t);
-        instance.processar();
+        TaskLaborerService instance = new TaskLaborerCertificationServiceImpl(t);
+        System.out.println("QueueTaskDTO:" + new JacksonMapper(QueueTaskDTO.class).serialize(instance.executar()));
+
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }

@@ -6,12 +6,13 @@
 package br.net.gvt.efika.worker.dao.impl.queue;
 
 import br.net.gvt.efika.mongo.dao.AbstractMongoDAO;
+import br.net.gvt.efika.mongo.dao.MongoEndpointEnum;
 import br.net.gvt.efika.worker.model.entity.QueueTaskMirror;
 
 public class QueueDAOMirrorImpl extends AbstractMongoDAO<QueueTaskMirror> {
 
     public QueueDAOMirrorImpl() {
-        super("10.200.35.67", "worker", QueueTaskMirror.class);
+        super(MongoEndpointEnum.MONGO.getIp(), "worker", QueueTaskMirror.class);
     }
 
 }

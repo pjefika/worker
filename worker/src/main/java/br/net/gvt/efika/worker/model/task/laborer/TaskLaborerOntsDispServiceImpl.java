@@ -10,9 +10,9 @@ import br.net.gvt.efika.queue.model.dto.input.CertiticationInput;
 import br.net.gvt.efika.queue.model.dto.output.OntsDispResponse;
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.queue.model.enuns.TaskResultState;
+import br.net.gvt.efika.util.json.JacksonMapper;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
-import br.net.gvt.efika.worker.util.JacksonMapper;
 import java.util.List;
 
 public class TaskLaborerOntsDispServiceImpl extends TaskLaborerAbstract {

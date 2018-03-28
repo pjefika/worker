@@ -5,14 +5,12 @@
  */
 package br.net.gvt.efika.worker.model.task.laborer;
 
-import br.net.gvt.efika.customer.model.certification.CustomerCertificationDTO;
 import br.net.gvt.efika.queue.model.dto.input.CertiticationInput;
 import br.net.gvt.efika.queue.model.dto.output.CertificationResponse;
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.queue.model.enuns.TaskResultState;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
 import br.net.gvt.efika.worker.io.swagger.model.GenericRequest;
-import br.net.gvt.efika.worker.util.JacksonMapper;
 
 public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
 
@@ -27,16 +25,9 @@ public class TaskLaborerCertificationServiceImpl extends TaskLaborerAbstract {
         CertificationResponse resp = new CertificationResponse();
   
         try {
-            CustomerCertificationDTO cert = FactoryDAO.newCustomerDAO().certify(req);
-            try {
-                System.out.println("RESP ->" + new JacksonMapper(CustomerCertificationDTO.class).serialize(cert));
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-            resp.setCertification(cert);
+            resp.setCertification(FactoryDAO.newCustomerDAO().certify(req));
             resp.setState(TaskResultState.OK);
         } catch (Exception e) {
-            System.out.println("EXCESSAO ->"+ e.getMessage());
             e.printStackTrace();
             resp.setState(TaskResultState.EXCEPTION);
             resp.setExceptionMessage(e.getMessage());

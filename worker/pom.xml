@@ -10,9 +10,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    
-    
-    
+        
     <build>
         <finalName>worker</finalName>
         <plugins>
@@ -96,20 +94,12 @@
             <artifactId>util</artifactId>
             <version>1.0.0</version>
         </dependency>
-        
-        <dependency>
-            <groupId>br.net.gvt.efika</groupId>
-            <artifactId>fulltest</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-                
-                        
+
         <dependency>
             <groupId>br.net.gvt.efika</groupId>
             <artifactId>queue</artifactId>
             <version>1.0.1</version>
         </dependency>
-                
         
         <!-- https://mvnrepository.com/artifact/org.mongodb.morphia/morphia -->
         <dependency>
