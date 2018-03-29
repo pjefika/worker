@@ -69,8 +69,7 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.7.5</version>
         </dependency>
-
-        
+                
         <dependency>
             <groupId>br.net.gvt.efika</groupId>
             <artifactId>customer</artifactId>
