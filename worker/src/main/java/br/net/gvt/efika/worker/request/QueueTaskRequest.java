@@ -16,7 +16,7 @@ public class QueueTaskRequest {
     private Integer amount;
 
     public QueueTaskRequest() {
-        amount = 100;
+        amount = 200;
     }
 
     public String getConsumer() {
