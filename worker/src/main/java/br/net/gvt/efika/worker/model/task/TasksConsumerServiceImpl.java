@@ -7,7 +7,6 @@ package br.net.gvt.efika.worker.model.task;
 
 import br.net.gvt.efika.util.thread.EfikaThread;
 import br.net.gvt.efika.worker.dao.factory.FactoryDAO;
-import br.net.gvt.efika.worker.dao.impl.queue.QueueDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

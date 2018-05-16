@@ -18,7 +18,7 @@ public class RequestFactory {
 
     public static QueueTaskRequest queueRequest() {
         QueueTaskRequest req = new QueueTaskRequest();
-        req.setAmount(5);
+        req.setAmount(100);
         try {
             req.setConsumer("worker: " + InetAddress.getLocalHost());
         } catch (UnknownHostException ex) {
