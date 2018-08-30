@@ -36,13 +36,13 @@ public class TasksConsumerThread implements Runnable {
 
             try {
                 //TODO: Criar base no mongo e apontar url do mongodb se necessario
-                MongoClient mongoClient = new MongoClient();
-                MongoDatabase database = mongoClient.getDatabase("logs");
-                Document document = new Document("error", ex.getMessage());
-                MongoCollection<Document> collection = database.getCollection("log");
-
-                collection.insertOne(document);
-                mongoClient.close();
+//                MongoClient mongoClient = new MongoClient();
+//                MongoDatabase database = mongoClient.getDatabase("logs");
+//                Document document = new Document("error", ex.getMessage());
+//                MongoCollection<Document> collection = database.getCollection("log");
+//
+//                collection.insertOne(document);
+//                mongoClient.close();
             }catch (Exception eM){
                 eM.printStackTrace();
             }
