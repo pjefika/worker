@@ -6,9 +6,15 @@
 package br.net.gvt.efika.worker.model.task;
 
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
+
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import br.net.gvt.efika.worker.model.factory.LaborerServiceFactory;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 
 /**
  *
@@ -27,6 +33,20 @@ public class TasksConsumerThread implements Runnable {
         try {
             LaborerServiceFactory.create(task).executar();
         } catch (Exception ex) {
+
+            try {
+                //TODO: Criar base no mongo e apontar url do mongodb se necessario
+                MongoClient mongoClient = new MongoClient();
+                MongoDatabase database = mongoClient.getDatabase("logs");
+                Document document = new Document("error", ex.getMessage());
+                MongoCollection<Document> collection = database.getCollection("log");
+
+                collection.insertOne(document);
+                mongoClient.close();
+            }catch (Exception eM){
+                eM.printStackTrace();
+            }
+
             Logger.getLogger(TasksConsumerThread.class.getName()).log(Level.SEVERE, null, ex);
         }
 
