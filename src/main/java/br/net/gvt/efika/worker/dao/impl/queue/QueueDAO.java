@@ -8,13 +8,15 @@ package br.net.gvt.efika.worker.dao.impl.queue;
 import br.net.gvt.efika.queue.model.dto.task.PendingTasksResponseDTO;
 import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 
+import java.util.List;
+
 /**
  *
  * @author G0042204|
  */
 public interface QueueDAO {
 
-    public PendingTasksResponseDTO consumePendingTasks() throws Exception;
+    public List<QueueTaskDTO> consumePendingTasks() throws Exception;
 
     public QueueTaskDTO completeTask(QueueTaskDTO task) throws Exception;
 

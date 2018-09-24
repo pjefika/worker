@@ -10,14 +10,21 @@ import br.net.gvt.efika.queue.model.dto.task.QueueTaskDTO;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
 import br.net.gvt.efika.worker.request.RequestFactory;
+import com.fasterxml.jackson.core.type.TypeReference;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class QueueDAOImpl implements QueueDAO {
 
     @Override
-    public PendingTasksResponseDTO consumePendingTasks() throws Exception {
-        FactoryHttpDAOAbstract<PendingTasksResponseDTO> fac = new FactoryHttpDAOAbstract<>(PendingTasksResponseDTO.class);
+    public List<QueueTaskDTO> consumePendingTasks() throws Exception {
+        FactoryHttpDAOAbstract<QueueTaskDTO[]> fac = new FactoryHttpDAOAbstract<QueueTaskDTO[]>(QueueTaskDTO[].class);
 //        return (PendingTasksResponseDTO) fac.createWithProxy().post(Urls.QUEUE_CONSUME_TASKS.getValor(), RequestFactory.queueRequest());
-        return (PendingTasksResponseDTO) fac.createWithoutProxy().post(Urls.QUEUE_CONSUME_TASKS.getUrl(), RequestFactory.queueRequest());
+        QueueTaskDTO[] test = fac.createWithoutProxy().post(Urls.QUEUE_CONSUME_TASKS.getUrl(), RequestFactory.queueRequest());
+        List<QueueTaskDTO> nList = Arrays.asList(test);
+        return nList;
     }
 
     @Override

@@ -43,7 +43,7 @@ public class QueueDAOImplIT {
         System.out.println("consumePendingTasks");
         QueueDAOImpl instance = new QueueDAOImpl();
         List<QueueTaskDTO> expResult = null;
-        List<QueueTaskDTO> result = instance.consumePendingTasks().getTasks();
+        List<QueueTaskDTO> result = instance.consumePendingTasks();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

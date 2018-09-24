@@ -19,7 +19,7 @@ public class TasksConsumerServiceImpl implements TasksConsumerService {
     @Override
     public void consume() {
         try {
-            FactoryDAO.createQueueDAO().consumePendingTasks().getTasks().forEach((t) -> {
+            FactoryDAO.createQueueDAO().consumePendingTasks().forEach((t) -> {
             //tT.forEach(t -> {
                 //System.out.println(t.getTask().getDesc());
                 System.out.println(t.getTask());
