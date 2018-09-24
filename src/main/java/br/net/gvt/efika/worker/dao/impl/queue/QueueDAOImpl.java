@@ -17,13 +17,13 @@ public class QueueDAOImpl implements QueueDAO {
     public PendingTasksResponseDTO consumePendingTasks() throws Exception {
         FactoryHttpDAOAbstract<PendingTasksResponseDTO> fac = new FactoryHttpDAOAbstract<>(PendingTasksResponseDTO.class);
 //        return (PendingTasksResponseDTO) fac.createWithProxy().post(Urls.QUEUE_CONSUME_TASKS.getValor(), RequestFactory.queueRequest());
-        return (PendingTasksResponseDTO) fac.createWithoutProxy().post("http://10.40.196.172:8089/queueAPI/queue/consumePendingTasks", RequestFactory.queueRequest());
+        return (PendingTasksResponseDTO) fac.createWithoutProxy().post(Urls.QUEUE_CONSUME_TASKS.getUrl(), RequestFactory.queueRequest());
     }
 
     @Override
     public QueueTaskDTO completeTask(QueueTaskDTO task) throws Exception {
         FactoryHttpDAOAbstract<QueueTaskDTO> fac = new FactoryHttpDAOAbstract<>(QueueTaskDTO.class);
-        return (QueueTaskDTO) fac.createWithoutProxy().post("http://10.40.196.172:8089/queueAPI/queue/completeTask", task);
+        return (QueueTaskDTO) fac.createWithoutProxy().post(Urls.QUEUE_COMPLETE_TASK.getUrl(), task);
     }
 
 }

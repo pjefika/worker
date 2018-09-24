@@ -139,6 +139,10 @@ public class TaskManobraService extends TaskLaborerAbstract{
                         .asString();
                 System.out.println(res.getBody());
                 ret.setState(TaskResultState.OK);
+                Gson toHash = new Gson();
+
+                ret.setResposta(toHash.fromJson(res.getBody(), HashMap.class));
+
 
                 //endregion
 
